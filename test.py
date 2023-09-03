@@ -6,7 +6,7 @@ from ex2 import Atividade2
 import numpy as np
 import traceback
 
-def run_blank(RodaAtividade):
+def run_blank_1(RodaAtividade):
     bgr = np.zeros((400,400,3), dtype=np.uint8)
     with patch('cv2.imshow'):
         try:
@@ -38,7 +38,7 @@ def test_ex1():
     RodaAtividade = Atividade1()
 
     result = {
-        'blank': run_blank(RodaAtividade),
+        'blank': run_blank_1(RodaAtividade),
         'angulo01': run_ex1(RodaAtividade, "img/angulo01.jpg"),
         'angulo02': run_ex1(RodaAtividade, "img/angulo02.jpg"),
         'angulo03': run_ex1(RodaAtividade, "img/angulo03.jpg"),
@@ -48,7 +48,7 @@ def test_ex1():
     check_ex1(result)
 
 
-def run_blank(RodaAtividade):
+def run_blank_2(RodaAtividade):
     bgr = np.zeros((400,400,3), dtype=np.uint8)
     with patch('cv2.imshow'):
         try:
@@ -100,7 +100,7 @@ def test_ex2():
     RodaAtividade = Atividade2()
 
     result = {
-        'blank': run_blank(RodaAtividade),
+        'blank': run_blank_2(RodaAtividade),
         'run_single_contour': run_single_contour(RodaAtividade),
         'frame01': run_ex2(RodaAtividade, "img/frame01.png"),
         'frame02': run_ex2(RodaAtividade, "img/frame02.png"),
