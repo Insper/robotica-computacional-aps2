@@ -10,7 +10,7 @@ def run_blank_1(RodaAtividade):
     bgr = np.zeros((400,400,3), dtype=np.uint8)
     with patch('cv2.imshow'):
         try:
-            bgr, D, angulo, h, f = RodaAtividade.calibration(bgr)
+            bgr, D, angulo, h, f = RodaAtividade.calibration(bgr, D=80, H=12.5)
         except Exception as e:
             return {'error': e, 'traceback': traceback.format_exc().splitlines()[-2:-1]}
         
