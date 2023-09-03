@@ -18,7 +18,7 @@ def run_blank_1(RodaAtividade):
 def run_ex1(RodaAtividade, fname):
     bgr = cv2.imread(fname)
     with patch('cv2.imshow'):
-        bgr, D, angulo, h, f = RodaAtividade.calibration(bgr)
+        bgr, D, angulo, h, f = RodaAtividade.calibration(bgr, D=80, H=12.5)
     return {'f':f,'angulo':angulo,'h':h}
 
 def check_ex1(result):
