@@ -95,25 +95,31 @@ class Atividade1(): # Essa classe deve herdar da classe ImageModule
         # Escreva o texto na imagem
         return bgr
 
-    def calibration(self, bgr: np.ndarray) -> np.ndarray:
-        """Esta função deve ser processar o frame de entrada chamando as funções necessárias para executar o exercicio 1 da APS 2. 
-        Crie quantas funções auxiliares achar necessário dentro dessa classe ou dentro da classe ImageModule.
-
-        Se desejar pode retornar uma máscara durante o desenvolvimento para facilitar a visualização
+    def calibration(self, bgr: np.ndarray, D: float = None, H: float = None) -> (np.ndarray, float, float, float, float):
+        """Não mude ou renomeie esta função
+        Essa função deve ser usada para calibrar a câmera e encontrar os valore da distância focal da SUA câmera.
+        Primeiro, tire uma foto de um objeto com o qual você conhece a distância real (por exemplo, uma régua) e o tamanho real (por exemplo, 30 cm).
+        Depois, chame essa função com a imagem de entrada e os valores reais do objeto. 
+        Mudando o valor de D e H acima.
 
         Args:
             bgr (np.ndarray): Frame de entrada
 
         Returns:
             bgr (np.ndarray): Frame com o exercicio 1 desenhado
+            D (float): Distancia real da câmera até o objeto [m]
+            angulo (float): ângulo com a vertical em graus
+            h (float): a distancia virtual entre os circulos [px]
+            f (float): a distância focal da câmera [px]
         """
-        bgr, D, angulo, h = self.run(bgr)
+        bgr, _, angulo, h = self.run(bgr)
         self.f = None
 
         return bgr, D, angulo, h, self.f
 
-    def run(self, bgr: np.ndarray) -> np.ndarray:
-        """Esta função deve ser processar o frame de entrada chamando as funções necessárias para executar o exercicio 1 da APS 2. 
+    def run(self, bgr: np.ndarray) -> (np.ndarray, float, float, float):
+        """Não mude ou renomeie esta função
+        Esta função deve ser processar o frame de entrada chamando as funções necessárias para executar o exercicio 1 da APS 2. 
         Crie quantas funções auxiliares achar necessário dentro dessa classe ou dentro da classe ImageModule.
 
         Se desejar pode retornar uma máscara durante o desenvolvimento para facilitar a visualização
@@ -123,9 +129,9 @@ class Atividade1(): # Essa classe deve herdar da classe ImageModule
 
         Returns:
             bgr (np.ndarray): Frame com o exercicio 1 desenhado
-            h (float): Distancia virtual entre os circulos [px]
-            f (float): Distância focal da câmera [px]
-            angulo (float): Ângulo com a vertical em graus
+            D (float): Distancia real da câmera até o objeto [m]
+            angulo (float): ângulo com a vertical em graus
+            h (float): a distancia virtual entre os circulos [px]
         """
         # Esta função deve ser implementada para executar o exercicio 1
         return None
