@@ -155,7 +155,7 @@ def rodar_webcam():
 
     while True:
         ret, bgr = cap.read()
-        bgr = RodaAtividade.run(bgr)
+        bgr, D, angulo, h = RodaAtividade.run(bgr)
 
         cv2.imshow("Imagem", bgr)
         if cv2.waitKey(1) & 0xFF == ord('q'):
