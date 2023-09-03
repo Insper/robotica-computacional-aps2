@@ -2,6 +2,7 @@ from module import ImageModule
 import cv2
 import numpy as np
 
+
 class Atividade1(): # Essa classe deve herdar da classe ImageModule
     def __init__(self):
         # Inicializar a classe pai
