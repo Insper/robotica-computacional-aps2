@@ -1,8 +1,8 @@
 import pytest
 import cv2
 from unittest.mock import patch
-from ex1_ import Atividade1
-from ex2_ import Atividade2
+from ex1 import Atividade1
+from ex2 import Atividade2
 import numpy as np
 import traceback
 
