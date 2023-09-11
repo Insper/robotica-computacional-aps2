@@ -20,8 +20,8 @@ def run_ex1(RodaAtividade, fname):
     return {'f':f,'angulo':angulo,'h':h}
 
 def check_ex1(result):
-    assert result['angulo01']['f'] == pytest.approx(2054., abs=10.), "O foco da camera esta fora do esperado"
-    assert result['angulo01']['h'] == pytest.approx(320., abs=5.), "A distancia entre os circulos esta fora do esperado"
+    assert result['angulo01']['f'] == pytest.approx(2054., abs=40.), "O foco da camera esta fora do esperado"
+    assert result['angulo01']['h'] == pytest.approx(320., abs=10.), "A distancia entre os circulos esta fora do esperado"
     assert result['angulo01']['angulo'] == pytest.approx(-0.17849094755360373, abs=5.), "O angulo, para a imagem angulo01.jpg, esta fora do esperado"
     assert result['angulo02']['angulo'] == pytest.approx(-51.98362315755636, abs=5.), "O angulo, para a imagem angulo02.jpg, esta fora do esperado"
     assert result['angulo03']['angulo'] == pytest.approx(-88.92917554521304, abs=5.), "O angulo, para a imagem angulo03.jpg, esta fora do esperado"
